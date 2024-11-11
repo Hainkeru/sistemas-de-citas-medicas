@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+*{ 
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    
+}
+
+body{
+    background-color: linear-gradient(90deg, rgba(2,0,36,1)0%, rgba(75,14,154,1)35%, rgba(0,212,255,1)100%);
+    font-family: 'Roboto', sans-serif;
+}
+
+.row{
+    text-align: center;   
+}
+
+
+form{
+    width: 100%;
+    background-color: white;
+    padding: 50px;
+    border-radius: 20px;
+    
+}
+
+.btn-primary{
+    text-align: center;
+    width: 50%;
+    height: 50px;
+    border: none;
+    border-radius: 10px;
+    background-image: linear-gradient(to right, #373b44, #4286f4);
+}
+
+.btn-outline-danger{
+    border: none;
+    text-decoration: underline;
+}
+
+.form-control{
+    color: rgba(0, 0, 0, .87);
+    border-bottom-color: rgba(0, 0, 0, .42);
+    box-shadow: none !important;
+    border: none;
+    border-bottom: 1px solid;
+    border-radius: 4px 4px 0 0;
+}
+
+h4{
+    font-size: 2rem !important;
+    font-weight: 700;
+}
+
+.form-label{
+    font-family: 700 !important ;
+}
+
+.table_section{
+    width: 100%;
+    overflow: auto;
+}
+
+.table{
+    width: 100%;
+    table-layout: fixed;
+    min-width: 1000px;
+}
+
+thead th{
+    position: sticky;
+    top: 0;
+    background-color: #f6f9fc;
+    color: #8493a5;
+    font-size: 15px;
+}
+
+th,td{
+    width: 650px;
+    border-bottom: 1px solid #dddddd;
+    padding: 10px 20px;
+    word-break: break-all;
+    text-align: center;
+}
+
+.table_header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    background-color: rgb(240,240, 240);
+}
+
+.table_header p{
+    margin-top: 20px;
+     color: #000000;
+     font-family: "Roboto", sans-serif;
+}
+
+button{
+    outline: none;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+td button:nth-child(1){
+    background-color: #0298cf;
+}
+
+
+.add_new{
+    padding: 10px 20px;
+    color: #ffffff;
+    background-color: #0298cf;
+}
