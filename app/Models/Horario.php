@@ -9,7 +9,7 @@ class Horario extends Model
 {
     use HasFactory;
 
-    private $fillable = ['día', 'hora_inicio', 'hora_fin', 'doctor_id', 'consultorio_id'];
+    protected $fillable = ['día', 'hora_inicio', 'hora_fin', 'doctor_id', 'consultorio_id'];
 
     public function doctor(){
         return $this->belongsTo(Doctor::class);
