@@ -295,8 +295,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   </a>
                 </li>
               </ul>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="{{url('admin/historial/buscar_pacientes')}}" class="nav-link active">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Buscar paciente</p>
+                  </a>
+                </li>
+              </ul>
             </li>
             @endcan
+
+
 
             <li class="nav-item">
               <a href="{{ route('logout') }}" class="nav-link" style="background-color: #a9200e" onclick="event.preventDefault();

@@ -122,4 +122,30 @@ class HistorialController extends Controller
         
         return $pdf->stream();
     }
+    
+    public function buscar_pacientes(Request$request){
+        $cc = $request->cc;
+        $paciente = Paciente::where('cc',$cc)->first();
+        return view('admin.historial.buscar_pacientes', compact('cc', 'paciente'));
+    }
+
+    public function imprimir_historial($id){
+        $configuracion = Config::latest()->first();
+
+        $paciente = Paciente::find($id);
+
+        $historiales = Historial::where('paciente_id',$id)->get();
+
+        $pdf = Pdf::loadView('admin.historial.imprimir_historial', compact('historiales', 'configuracion', 'paciente'));
+
+        
+        $pdf->output();
+        $dompdf = $pdf->getDomPDF();
+        $canvas = $dompdf->getCanvas();
+        $canvas->page_text(20,800, "Impresora por: ".Auth::user()->email , null, 10, array(0,0,0));
+        $canvas->page_text(270,800, "Pagina {PAGE_NUM} de {PAGE_COUNT}", null, 10, array(0,0,0));
+        $canvas->page_text(450,800, "Fecha: " . \Carbon\Carbon::now()->format('d/m/Y')." - ". \Carbon\Carbon::now()->format('H:i:s'), null, 10, array(0,0,0));
+        
+        return $pdf->stream();
+    }
 }

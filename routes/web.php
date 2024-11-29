@@ -122,6 +122,8 @@ Route::get('/admin/historial/create', [App\Http\Controllers\HistorialController:
 Route::post('/admin/historial/create', [App\Http\Controllers\HistorialController::class, 'store'])->name('admin.historial.store')->middleware('auth', 'can:admin.historial.store');
 Route::get('/admin/historial/reportes', [App\Http\Controllers\HistorialController::class, 'reportes'])->name('admin.historial.reportes')->middleware('auth', 'can:admin.historial.reportes');
 Route::get('/admin/historial/pdf/{id}', [App\Http\Controllers\HistorialController::class, 'pdf'])->name('admin.historial.pdf')->middleware('auth', 'can:admin.historial.pdf');
+Route::get('/admin/historial/buscar_pacientes', [App\Http\Controllers\HistorialController::class, 'buscar_pacientes'])->name('admin.historial.buscar_pacientes')->middleware('auth', 'can:admin.historial.buscar_pacientes');
+Route::get('/admin/historial/paciente/{id}', [App\Http\Controllers\HistorialController::class, 'imprimir_historial'])->name('admin.historial.imprimir_historial')->middleware('auth', 'can:admin.historial.imprimir_historial');
 Route::get('/admin/historial/{id}', [App\Http\Controllers\HistorialController::class, 'show'])->name('admin.historial.show')->middleware('auth', 'can:admin.historial.show');
 Route::get('/admin/historial/{id}/edit', [App\Http\Controllers\HistorialController::class, 'edit'])->name('admin.historial.edit')->middleware('auth', 'can:admin.historial.edit');
 Route::put('/admin/historial/{id}', [App\Http\Controllers\HistorialController::class, 'update'])->name('admin.historial.update')->middleware('auth', 'can:admin.historial.update');
