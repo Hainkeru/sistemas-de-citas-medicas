@@ -32,4 +32,8 @@ class Doctor extends Model
         return $this->hasMany(Historial::class);
     }
 
+    public function pagos(){
+        return $this->hasMany(pago::class);
+    }
+
 }

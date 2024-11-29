@@ -14,4 +14,8 @@ class Paciente extends Model
     public function historial() {
         return $this->hasMany(Historial::class);
     }
+
+    public function pagos(){
+        return $this->hasMany(pago::class);
+    }
 }
