@@ -2,10 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Config;
 use App\Models\Doctor;
 use App\Models\Paciente;
 use App\Models\pago;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
+use Endroid\QrCode\QrCode;
+use Endroid\QrCode\Writer\PngWriter;
+
 
 class PagoController extends Controller
 {
@@ -15,7 +20,8 @@ class PagoController extends Controller
     public function index()
     {
         $pagos = pago::all();
-        return view('admin.pagos.index', compact('pagos'));
+        $total_monto = pago::sum('monto');
+        return view('admin.pagos.index', compact('pagos', 'total_monto'));
     }
 
     /**
@@ -110,5 +116,30 @@ class PagoController extends Controller
         return redirect() ->route('admin.pagos.index')
             ->with('mensaje','Se ha eliminado el pago correctamente.')
             ->with('icono','success');
+    }
+
+    public function pdf($id){
+        $configuracion = Config::latest()->first();
+
+        $pago = pago::find($id);
+
+        $data = "Codigo de seguridad del comprobante de pago del paciente".$pago->paciente->apellidos." ".$pago->paciente->nombre. " en fecha".$pago->fecha_pago." con el monto de ".$pago->monto;
+
+        $qrCode = new QrCode($data);
+        $writer = new PngWriter();
+        $result = $writer->write($qrCode);
+        $qrCodeBase64 = base64_encode($result->getString()); 
+
+        $pdf = Pdf::loadView('admin.pagos.pdf', compact('configuracion', 'pago', 'qrCodeBase64'));
+
+        /*
+        $pdf->output();
+        $dompdf = $pdf->getDomPDF();
+        $canvas = $dompdf->getCanvas();
+        $canvas->page_text(20,800, "Impresora por: ".Auth::user()->email , null, 10, array(0,0,0));
+        $canvas->page_text(270,800, "Pagina {PAGE_NUM} de {PAGE_COUNT}", null, 10, array(0,0,0));
+        $canvas->page_text(450,800, "Fecha: " . \Carbon\Carbon::now()->format('d/m/Y')." - ". \Carbon\Carbon::now()->format('H:i:s'), null, 10, array(0,0,0));
+        */
+        return $pdf->stream();
     }
 }

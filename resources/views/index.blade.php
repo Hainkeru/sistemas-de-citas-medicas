@@ -69,7 +69,6 @@
             <li><a href="#about">Acerca de mí</a></li>
             <li><a href="#departments">Servicios</a></li>
             <li><a href="#doctors">Doctores</a></li>
-            <li><a href="#contact">Contacto</a></li>
           </ul>
           <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>
@@ -92,7 +91,7 @@
       <div class="container position-relative">
 
         <div class="welcome position-relative" data-aos="fade-down" data-aos-delay="100">
-          <h2>Bienvenido</h2>
+          <h2 style="color: antiquewhite;">Bienvenido</h2>
           <p>al centro de atencion del Dr. Luis Miguel.</p>
         </div><!-- End Welcome -->
 
@@ -117,6 +116,15 @@
                     <p>Podemos atender virtual o presencialmente, tu decides como quieres que te ayudemos.</p>
                   </div>
                 </div><!-- End Icon Box -->
+                <div class="col-xl-4 d-flex align-items-stretch">
+                  <div class="icon-box" data-aos="zoom-out" data-aos-delay="300">
+                    <i class="bi bi-clipboard-data"></i>
+                    <h4>Precios de atencion</h4>
+                    <p>Atencion virtual - $60.000</p>
+                    <p>Atencion Presencial - $110.000</p>
+                  </div>
+                </div><!-- End Icon Box -->
+
 
 
               </div>
@@ -338,7 +346,7 @@
                     <p>Sesiones confidenciales para abordar problemas personales, como ansiedad, depresión, estrés, dificultades en las relaciones, etc.</p>
                   </div>
                   <div class="col-lg-4 text-center order-1 order-lg-2">
-                    <img src="assets/img/departments-1.jpg" alt="" class="img-fluid">
+                    <img src="assets/img/servicios/teraphy1.jpeg" alt="" class="img-fluid">
                   </div>
                 </div>
               </div>
@@ -349,7 +357,7 @@
                     <p>Ayuda a mejorar la comunicación, resolver conflictos y fortalecer los vínculos en las relaciones.</p>
                   </div>
                   <div class="col-lg-4 text-center order-1 order-lg-2">
-                    <img src="assets/img/departments-2.jpg" alt="" class="img-fluid">
+                    <img src="assets/img/servicios/family.jpeg" alt="" class="img-fluid">
                   </div>
                 </div>
               </div>
@@ -360,7 +368,7 @@
                     <p>Proporciona un espacio seguro para compartir experiencias y aprender de otros con problemas similares.</p>
                   </div>
                   <div class="col-lg-4 text-center order-1 order-lg-2">
-                    <img src="assets/img/departments-3.jpg" alt="" class="img-fluid">
+                    <img src="assets/img/servicios/teraphy2.jpeg" alt="" class="img-fluid">
                   </div>
                 </div>
               </div>
@@ -371,7 +379,7 @@
                     <p>Brinda apoyo inmediato en situaciones de crisis, como pérdidas, traumas o eventos estresantes.</p>
                   </div>
                   <div class="col-lg-4 text-center order-1 order-lg-2">
-                    <img src="assets/img/departments-4.jpg" alt="" class="img-fluid">
+                    <img  src="assets/img/servicios/asesoramiento.jpeg" alt="" class="img-fluid">
                   </div>
                 </div>
               </div>
@@ -383,7 +391,7 @@
                     <p> Ofrece orientación y apoyo en diversas áreas de la vida, como la educación, la salud y el desarrollo personal.</p>
                   </div>
                   <div class="col-lg-4 text-center order-1 order-lg-2">
-                    <img src="assets/img/departments-5.jpg" alt="" class="img-fluid">
+                    <img src="assets/img/servicios/teraphy3.jpeg" alt="" class="img-fluid">
                   </div>
                 </div>
               </div>
@@ -427,18 +435,6 @@
     </section><!-- /Doctors Section -->
 
     <!-- Contact Section -->
-    <section id="contact" class="contact section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Contacto</h2>
-      </div><!-- End Section Title -->
-
-      <div class="mb-5" data-aos="fade-up" data-aos-delay="200">
-        <iframe style="border:0; width: 100%; height: 300px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125223.21102298936!2d-74.34362243750002!3d11.244826699999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8ef4f506cf27419d%3A0x5c450271ffd02883!2sCentro%20hist%C3%B3rico%20santa%20marta!5e0!3m2!1ses-419!2sco!4v1731637245247!5m2!1ses-419!2sco" frameborder="0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-      </div><!-- End Google Maps -->
-
-    </section>
   </main>
 
   <footer id="footer" class="footer light-background">

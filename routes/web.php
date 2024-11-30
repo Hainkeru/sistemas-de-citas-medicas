@@ -140,3 +140,4 @@ Route::get('/admin/pagos/{id}/edit', [App\Http\Controllers\PagoController::class
 Route::put('/admin/pagos/{id}', [App\Http\Controllers\PagoController::class, 'update'])->name('admin.pagos.update')->middleware('auth', 'can:admin.pagos.update');
 Route::get('/admin/pagos/{id}/confirm-delete', [App\Http\Controllers\PagoController::class, 'confirmDelete'])->name('admin.pagos.confirmDelete')->middleware('auth', 'can:admin.pagos.confirmDelete');
 Route::delete('/admin/pagos/{id}', [App\Http\Controllers\PagoController::class, 'destroy'])->name('admin.pagos.destroy')->middleware('auth', 'can:admin.pagos.destroy');
+Route::get('/admin/pagos/pdf/{id}', [App\Http\Controllers\PagoController::class, 'pdf'])->name('admin.pagos.pdf')->middleware('auth', 'can:admin.pagos.pdf');

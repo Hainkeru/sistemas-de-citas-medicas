@@ -44,6 +44,7 @@
                     <td>{{$pago->paciente->apellidos." ".$pago->paciente->nombres}}</td>
                     <td>{{$pago->doctor->apellidos." ".$pago->doctor->nombre}}</td>
                     <td style="text-align: center"><div class="btn-group" role="group" aria-label="Basic example">
+                        <a href="{{url('/admin/pagos/pdf/'.$pago->id)}}" type="button" class="btn btn-warning btn-sm"><i class="bi bi-printer"></i></a>
                         <a href="{{url('/admin/pagos/'.$pago->id.'/edit')}}" type="button" class="btn btn-success btn-sm"><i class="bi bi-pencil"></i></a>
                         <a href="{{url('/admin/pagos/'.$pago->id.'/confirm-delete')}}" type="button" class="btn btn-danger btn-sm"><i class="bi bi-eraser"></i></button>
                     </div></td>
@@ -51,6 +52,8 @@
             @endforeach
         </tbody>
     </table>
+    <hr>
+    <p><h4>Resumen total del monto de pagos {{$total_monto}}</h4></p>
   
 
 <script>
