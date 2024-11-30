@@ -71,7 +71,7 @@ class RoleSeeder extends Seeder
         Permission::create(['name' => 'admin.consultorios.index'])->syncRoles([$admin, $secretaria]);
         Permission::create(['name' => 'admin.consultorios.create'])->syncRoles([$admin, $secretaria]);
         Permission::create(['name' => 'admin.consultorios.store'])->syncRoles([$admin, $secretaria]);
-        Permission::create(['name' => 'admin.consultorios.show'])->syncRoles([$admin, $secretaria]);
+        Permission::create(['name' => 'admin.consultorios.show'])->syncRoles([$admin, $secretaria, $usuario]);
         Permission::create(['name' => 'admin.consultorios.edit'])->syncRoles([$admin, $secretaria]);
         Permission::create(['name' => 'admin.consultorios.update'])->syncRoles([$admin, $secretaria]);
         Permission::create(['name' => 'admin.consultorios.confirmDelete'])->syncRoles([$admin, $secretaria]);
@@ -105,7 +105,7 @@ class RoleSeeder extends Seeder
 
         Permission::create(['name' => 'admin.horarios.cargar_datos_consultorios'])->syncRoles([$admin]);
 
-        Permission::create(['name' => 'cargar_datos_consultorios'])->syncRoles([$admin, $usuario]);
+       // Permission::create(['name' => 'cargar_datos_consultorios'])->syncRoles([$admin, $usuario]);
         Permission::create(['name' => 'cargar_reserva_doctores'])->syncRoles([$admin, $usuario]);
         Permission::create(['name' => 'ver_reservas'])->syncRoles([$admin, $usuario]);
         Permission::create(['name' => 'admin.eventos.create'])->syncRoles([$admin, $usuario]);
