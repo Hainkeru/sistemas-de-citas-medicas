@@ -105,7 +105,7 @@ class RoleSeeder extends Seeder
 
         Permission::create(['name' => 'admin.horarios.cargar_datos_consultorios'])->syncRoles([$admin]);
 
-       // Permission::create(['name' => 'cargar_datos_consultorios'])->syncRoles([$admin, $usuario]);
+        Permission::create(['name' => 'cargar_datos_consultorios'])->syncRoles([$admin, $usuario]);
         Permission::create(['name' => 'cargar_reserva_doctores'])->syncRoles([$admin, $usuario]);
         Permission::create(['name' => 'ver_reservas'])->syncRoles([$admin, $usuario]);
         Permission::create(['name' => 'admin.eventos.create'])->syncRoles([$admin, $usuario]);

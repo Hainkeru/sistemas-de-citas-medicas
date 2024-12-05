@@ -142,4 +142,11 @@ class PagoController extends Controller
         */
         return $pdf->stream();
     }
+
+    public function metodos()
+    {
+        
+        return view('admin.metodos.index');
+    }
+    
 }
